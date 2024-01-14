@@ -1,0 +1,23 @@
+
+.faq{
+    background-color: white;
+    color: black;
+   margin: 20px 0;
+ 
+}
+
+
+.questionContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    cursor: pointer;
+    margin: 0;
+    transition: all ease-in-out 1s; 
+}
+
+.answer{
+    max-width: 90%;
+    padding: 0 15px 10px;
+   
+}
