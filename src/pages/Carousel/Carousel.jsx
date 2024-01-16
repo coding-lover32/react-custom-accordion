@@ -34,6 +34,7 @@ const Carousel = () => {
         Project: Carousel
       </h1>
       <div className="flex justify-between items-center gap-4 md:gap-6 my-8">
+
         {/* Previous Button */}
         <div>
           <button
@@ -45,8 +46,23 @@ const Carousel = () => {
         </div>
 
         {/* Slider Image */}
-        <div className="w-full max-w-screen-sm">
-          <img src={slides[index]} alt="" className="w-full h-auto" />
+        <div className="w-full max-w-xl relative flex overflow-hidden">
+          {
+            slides.map((slide, idx) => idx == index && <img 
+            key={idx}
+            src={slide} 
+            alt="" 
+            className={`w-full h-auto transition-transform duration-300 ${idx === index ? 'transform translate-x-0' : ''}`} />)
+          }
+          {/* Dot Icons */}
+          <div className="flex justify-center items-center gap-1 absolute bottom-2 w-full">
+            {
+              slides.map((slide, idx) => <p
+                key={idx}
+                className={`text-gray-400 text-3xl transition-all duration-200 ${idx === index && 'text-white'}`}
+              >•</p>)
+            }
+          </div>
         </div>
 
         {/* Next Button */}
